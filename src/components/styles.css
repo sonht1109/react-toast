@@ -3,7 +3,7 @@
   z-index: 99;
   top: 10px;
   right: 10px;
-}
+  }
 
 .notification {
   color: white;
@@ -18,6 +18,19 @@
   animation: slideInRight 0.2s forwards ease-out;
   transform: translate3d(200%, 0, 0);
   overflow: hidden;
+  position: relative;
+}
+
+.is-timeout::after{
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  content: '';
+  position: absolute;
+  animation: progress 2.5s forwards linear;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
 }
 
 .exit{
@@ -35,9 +48,18 @@
 
 @keyframes slideOutRight {
   from {
-    transform: translate3d(0, 0, 0) scaleY(1);
+    transform: translate3d(0, 0, 0);
   }
   to{
-    transform: translate3d(200%, 0, 0) scaleY(0);
+    transform: translate3d(200%, 0, 0);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(1);
+  }
+  to{
+    transform: scaleX(0);
   }
 }

@@ -21,7 +21,7 @@ export default function Notification({ n }) {
   return (
     <div
       ref={ref}
-      className="notification"
+      className={`notification ${n.isTimeout && 'is-timeout'}`}
       onClick={() => {
         removeNotification();
         setTimeout(() => {
