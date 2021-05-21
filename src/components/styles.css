@@ -15,4 +15,29 @@
   width: 200px;
   min-height: 40px;
   box-sizing: border-box;
+  animation: slideInRight 0.2s forwards ease-out;
+  transform: translate3d(200%, 0, 0);
+  overflow: hidden;
+}
+
+.exit{
+  animation: slideOutRight 0.2s forwards ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(200%, 0, 0);
+  }
+  to{
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+  to{
+    transform: translate3d(200%, 0, 0) scaleY(0);
+  }
 }
